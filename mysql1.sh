@@ -1,0 +1,1 @@
+docker exec -it mysql1 mysql -u root -p
