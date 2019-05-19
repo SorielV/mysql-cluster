@@ -8,17 +8,34 @@ git clone https://github.com/SorielV/mysql-cluster.git
 cd mysql-cluster
 ./start.sh
 ```
-Example connect to mysql console
+
+Connection to mysql console
 ```
 ./mysql1.sh
-```
-or
-```sh
 docker exec -it mysql1 mysql -u root -p
 ```
 
 Windows 
-See [Mysql Cluster](https://hub.docker.com/r/mysql/mysql-cluster/) good luck
+```cmd
+git config --global core.autocrlf false
+git clone https://github.com/SorielV/mysql-cluster.git
+cd mysql-cluster
+start.cmd
+````
+or
+```cmd
+git clone https://github.com/SorielV/mysql-cluster.git
+cd mysql-cluster
+git config core.autocrlf false
+git rm --cached -r .
+git reset --hard
+start.cmd
+```
+
+Connection to mysql console
+```
+docker exec -it mysql1 mysql -u root -p
+```
 
 Docs
 [Docker Mysql Cluster](https://hub.docker.com/r/mysql/mysql-cluster/)
