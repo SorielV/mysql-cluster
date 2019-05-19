@@ -41,7 +41,3 @@ HostName=10.10.10.10
 [mysqld]
 NodeId=5
 HostName=10.10.10.11
-
-[mysqld]
-NodeId=6
-HostName=10.10.10.12

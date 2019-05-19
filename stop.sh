@@ -6,7 +6,7 @@ docker -v &>/dev/null || {
   exit 2
 }
 
-CONTAINERS_RUNNING=$(docker ps --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2|mysql3)")
+CONTAINERS_RUNNING=$(docker ps --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2)")
 if [ ! -z "$CONTAINERS_RUNNING" ]
 then
   echo "Docker containers running"

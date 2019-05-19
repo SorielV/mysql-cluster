@@ -5,8 +5,8 @@ docker -v &>/dev/null || {
   exit 2
 }
 
-EXPECTED=6
-COUNT_CLUSTER_CONTAINERS=$(docker ps -a --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2|mysql3)" | wc -l)
+EXPECTED=5
+COUNT_CLUSTER_CONTAINERS=$(docker ps -a --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2)" | wc -l)
 
 if [ "$COUNT_CLUSTER_CONTAINERS" -eq 0 ]
 then
@@ -19,7 +19,7 @@ then
   echo "try exec remove.sh and cluster.sh"
   exit 2
 else
-  docker restart $(docker ps -a --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2|mysql3)")
+  docker restart $(docker ps -a --format {{.Names}} | grep -E "(mgmd|ndbd1|ndbd2|mysql1|mysql2)")
   echo "Done"
   exit 0
 fi
