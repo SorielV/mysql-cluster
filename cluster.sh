@@ -18,7 +18,7 @@ fi
 if [ -z "`docker network ls | grep ncluster`" ] 
 then
   echo "Creating network"
-  docker network create cluster --subnet=10.10.10.0/16 || exit 2
+  docker network create ncluster --subnet=10.10.10.0/16 || exit 2
 else
   docker inspect ncluster | grep '"Subnet": "10.10.10.0' &>/dev/null || {
     echo "ncluster shold have subnet 10.10.10.0"
